@@ -60,8 +60,8 @@
 <button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400" id="theme-toggle">
 <span class="material-icons">brightness_4</span>
 </button>
-<a class="hidden md:block px-5 py-2.5 rounded-full text-sm font-bold text-primary border-2 border-primary hover:bg-primary hover:text-white transition-all" href="register.jsp">Sign In</a>
-<a class="px-5 py-2.5 rounded-full text-sm font-bold text-white bg-primary hover:bg-opacity-90 transition shadow-lg shadow-primary/30" href="#">Join Now</a>
+<a class="hidden md:block px-5 py-2.5 rounded-full text-sm font-bold text-primary border-2 border-primary hover:bg-primary hover:text-white transition-all" href="UserReg.jsp">Sign In</a>
+<a class="px-5 py-2.5 rounded-full text-sm font-bold text-white bg-primary hover:bg-opacity-90 transition shadow-lg shadow-primary/30" href="userlogin.jsp">Join Now</a>
 </div>
 </div>
 </div>
@@ -320,9 +320,16 @@
                         Streamline your operations, manage appointments efficiently, and grow your customer base with our all-in-one management solution.
                     </p>
 <div class="flex flex-col sm:flex-row justify-center gap-4">
-<button class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition shadow-lg transform hover:-translate-y-1">
+<!-- <button class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition shadow-lg transform hover:-translate-y-1">
                             Register Your Business
-                        </button>
+                        </button> -->
+<form action="salonReg.jsp" method="post">
+    <button type="submit"
+        class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition shadow-lg transform hover:-translate-y-1">
+        Register Your Business
+    </button>
+</form>
+
 <button class="bg-transparent border-2 border-white/30 text-white hover:bg-white/10 font-bold py-3 px-8 rounded-full transition">
                             Learn More
                         </button>
