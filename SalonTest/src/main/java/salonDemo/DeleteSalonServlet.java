@@ -1,4 +1,4 @@
-package test;
+package salonDemo;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -6,18 +6,19 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
- * Servlet implementation class demo1
+ * Servlet implementation class DeleteSalonServlet
  */
-@WebServlet("/demo1")
-public class demo1 extends HttpServlet {
+@WebServlet("/DeleteSalonServlet")
+public class DeleteSalonServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public demo1() {
+    public DeleteSalonServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -26,17 +27,19 @@ public class demo1 extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-		//minal mali 
+		
+		response.setContentType("text/html");
+		PrintWriter pw = response.getWriter();
+		 int id = Integer.parseInt(request.getParameter("salon_id"));
+		 int status = SalonDao.DeleteSalon(id);
+		 if(status > 0)
+		 {
+			 response.sendRedirect("ViewSalonServlet");
+		 }
+		 else
+		 {
+			 pw.print("Sorry!...Delete was unsucessfully");
+		 }
 	}
 
 }
